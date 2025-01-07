@@ -2,6 +2,7 @@
 
 int main(void)
 {
+   
     GLFWwindow* window;
 
     /* Initialize the library */
@@ -22,14 +23,22 @@ int main(void)
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
+
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
+
+        glBegin(GL_TRIANGLES);
+        glVertex2f(-0.3f, -0.5f);
+        glVertex2f(1.0f, 1.5f);
+        glVertex2f(0.5f, 2.0f);
+        glEnd();
 
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
 
         /* Poll for and process events */
         glfwPollEvents();
+    
     }
 
     glfwTerminate();

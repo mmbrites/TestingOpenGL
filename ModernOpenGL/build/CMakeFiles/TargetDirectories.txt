@@ -1,0 +1,10 @@
+/home/chiono/Documents/Programming/Projects/TestingOpenGL/ModernOpenGL/build/CMakeFiles/glad.dir
+/home/chiono/Documents/Programming/Projects/TestingOpenGL/ModernOpenGL/build/CMakeFiles/application.dir
+/home/chiono/Documents/Programming/Projects/TestingOpenGL/ModernOpenGL/build/CMakeFiles/edit_cache.dir
+/home/chiono/Documents/Programming/Projects/TestingOpenGL/ModernOpenGL/build/CMakeFiles/rebuild_cache.dir
+/home/chiono/Documents/Programming/Projects/TestingOpenGL/ModernOpenGL/build/glfw/CMakeFiles/edit_cache.dir
+/home/chiono/Documents/Programming/Projects/TestingOpenGL/ModernOpenGL/build/glfw/CMakeFiles/rebuild_cache.dir
+/home/chiono/Documents/Programming/Projects/TestingOpenGL/ModernOpenGL/build/glfw/src/CMakeFiles/glfw.dir
+/home/chiono/Documents/Programming/Projects/TestingOpenGL/ModernOpenGL/build/glfw/src/CMakeFiles/update_mappings.dir
+/home/chiono/Documents/Programming/Projects/TestingOpenGL/ModernOpenGL/build/glfw/src/CMakeFiles/edit_cache.dir
+/home/chiono/Documents/Programming/Projects/TestingOpenGL/ModernOpenGL/build/glfw/src/CMakeFiles/rebuild_cache.dir

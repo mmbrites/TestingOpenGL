@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/hello.dir/hello.cpp.o -o hello  /usr/lib64/libGL.so glfw/src/libglfw3.a /usr/lib64/librt.a -lm -ldl

@@ -24,6 +24,14 @@ int main(void)
     glfwMakeContextCurrent(window);
 
     int version = gladLoadGL(glfwGetProcAddress);
+
+    if (version == 0)
+    {
+        std::cout << "Failed to initialise OpenGL context." << std::endl;
+        return -1;
+    }
+
+    std::cout << glGetString(GL_VERSION) << std::endl;
     std::cout << "GL " << GLAD_VERSION_MAJOR(version) << "." << GLAD_VERSION_MINOR(version) << std::endl;
 
     /* Loop until the user closes the window */

@@ -45,6 +45,18 @@ int main(void)
     glBindBuffer(GL_ARRAY_BUFFER, buffer); // Selecting the buffer that we "generated" in the last function call
     glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(float), positions, GL_STATIC_DRAW); // Filling the buffer with data
 
+    /*
+        index = 0 --> index of the vertex attribute to be modified
+        size = 2 --> size of the vertex attribute
+        type = GL_FLOAT --> type of the contents in the vertex attribute
+        normalized = GL_FALSE --> normalising is changing the range to 0 - 1
+        stride = 2 * sizeof(float) --> bytes in between vertices
+        pointer = 0 --> offset of the vertex attribute
+    */
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), 0);
+    // 0 --> the index of the vertex attribute to be enabled
+    glEnableVertexAttribArray(0);
+
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {

@@ -130,28 +130,41 @@ int main(void)
     std::cout << glGetString(GL_VERSION) << std::endl;
     std::cout << "GL " << GLAD_VERSION_MAJOR(version) << "." << GLAD_VERSION_MINOR(version) << std::endl;
 
-    float positions[6] = {
-        -0.5f, -0.5f, 
-         0.0f,  0.5f, 
-         0.5f, -0.5f
+    float positions[] = {
+        -0.5f, -0.5f, // 0
+         0.5f, -0.5f, // 1
+         0.5f,  0.5f, // 2
+        -0.5f,  0.5f  // 3
+    };
+
+    // Index Buffer: Vertex indices used for each triangle. Note: you can use unsigned char or unsigned short if you want to save memory, but the type has to be "unsigned"
+    unsigned int indices[] = {
+        0, 1, 2,
+        2, 3, 0
     };
 
     unsigned int buffer;
     glGenBuffers(1, &buffer); // Requesting OpenGL for 1 buffer. The buffer IDs are stored in buffer.
     glBindBuffer(GL_ARRAY_BUFFER, buffer); // Selecting the buffer that we "generated" in the last function call
-    glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(float), positions, GL_STATIC_DRAW); // Filling the buffer with data
+    glBufferData(GL_ARRAY_BUFFER, 4 * 2 * sizeof(float), positions, GL_STATIC_DRAW); // Filling the buffer with data
 
     /*
-        index = 0 --> index of the vertex attribute to be modified
-        size = 2 --> size of the vertex attribute
-        type = GL_FLOAT --> type of the contents in the vertex attribute
-        normalized = GL_FALSE --> normalising is changing the range to 0 - 1
-        stride = 2 * sizeof(float) --> bytes in between vertices
-        pointer = 0 --> offset of the vertex attribute
+        Tell OpenGL how to interpret data:
+            index = 0 --> index of the vertex attribute to be modified
+            size = 2 --> size of the vertex attribute
+            type = GL_FLOAT --> type of the contents in the vertex attribute
+            normalized = GL_FALSE --> normalising is changing the range to 0 - 1
+            stride = 2 * sizeof(float) --> bytes in between vertices
+            pointer = 0 --> offset of the vertex attribute
     */
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), 0);
     // 0 --> the index of the vertex attribute to be enabled
     glEnableVertexAttribArray(0);
+
+    unsigned int indexBufferObject;
+    glGenBuffers(1, &indexBufferObject);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferObject); // Selecting the buffer that we "generated" in the last function call
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, 6 * sizeof(unsigned int), indices, GL_STATIC_DRAW); // Filling the buffer with data
 
     ShaderProgramSource source = parseShader("../resources/shaders/basic.shader"); // The relative path is relative to the executable, not to the source code!
     unsigned int shader = createShader(source.vertexSourceCode, source.fragmentSourceCode);
@@ -164,7 +177,15 @@ int main(void)
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        // glDrawArrays(GL_TRIANGLES, 0, 6);
+        /*
+            Used most of the time instead of glDrawArrays since it allows the specification of an index buffer.
+            mode - GL_TRIANGLES
+            count - number of indices we are drawing
+            type - type of data inside the index buffer
+            indices - offset of the first index in the array in the data store of the buffer currently bound to the GL_ELEMENT_ARRAY_BUFFER 
+        */
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 
         /* Swap front and back buffers */
         glfwSwapBuffers(window);

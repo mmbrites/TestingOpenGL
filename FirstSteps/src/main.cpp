@@ -2,6 +2,47 @@
 #include <GLFW/glfw3.h>
 
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+
+struct ShaderProgramSource
+{
+    std::string vertexSourceCode;
+    std::string fragmentSourceCode;
+};
+
+static ShaderProgramSource parseShader(const std::string & filePath)
+{
+
+    // Not the most efficient way of dealing with files. The C way is better for performance
+    std::ifstream stream(filePath);
+
+    enum class ShaderType
+    {
+        NONE = -1, VERTEX = 0, FRAGMENT = 1
+    };
+
+    std::string line;
+    std::stringstream ss[2]; // Two stringstreams: one for the vertex shader, one the fragment shader
+    ShaderType type = ShaderType::NONE;
+    while (getline(stream, line)) // 'line' stores the result
+    {
+        if (line.find("shader") != std::string::npos) // "find" returns the position of the first character of the found substring or 'npos' if no such substring is found.
+        {
+            if (line.find("vertex") != std::string::npos)
+                type = ShaderType::VERTEX;
+            else if (line.find("fragment") != std::string::npos)
+                type = ShaderType::FRAGMENT;
+
+        }
+        else
+            ss[(int)type] << line << '\n';
+    }
+
+    return { ss[0].str(), ss[1].str() };
+
+}
 
 static unsigned int compileShader(unsigned int type, const std::string & source)
 {
@@ -112,28 +153,8 @@ int main(void)
     // 0 --> the index of the vertex attribute to be enabled
     glEnableVertexAttribArray(0);
 
-    // This should have been done in a file, but whatever
-    std::string vertexShader = 
-        "#version 330 core\n" // Specifies the version of the GLSL (Shading Language). 'core' means that you cannot use deprecated functions
-        "\n"
-        "layout(location = 0) in vec4 position;\n" // 'location' --> Index of the attribute. We use vec4 instead of a vec2 because 'gl_Position' is a vec4
-        "\n"
-        "void main()\n"
-        "{\n"
-        "   gl_Position = position;\n"
-        "}\n";
-
-     std::string fragmentShader = 
-        "#version 330 core\n" // Specifies the version of the GLSL (Shading Language). 'core' means that you cannot use deprecated functions
-        "\n"
-        "layout(location = 0) out vec4 color;\n" // We want to output a 'color'
-        "\n"
-        "void main()\n"
-        "{\n"
-        "   color = vec4(1.0, 0.0, 0.0, 1.0);\n" // Color: red
-        "}\n";
-    
-    unsigned int shader = createShader(vertexShader, fragmentShader);
+    ShaderProgramSource source = parseShader("../resources/shaders/basic.shader"); // The relative path is relative to the executable, not to the source code!
+    unsigned int shader = createShader(source.vertexSourceCode, source.fragmentSourceCode);
     glUseProgram(shader);
 
     /* Loop until the user closes the window */
@@ -153,7 +174,7 @@ int main(void)
     
     }
 
-    glDeleteProgram(shader);
+    // glDeleteProgram(shader);
 
     glfwTerminate();
     return 0;

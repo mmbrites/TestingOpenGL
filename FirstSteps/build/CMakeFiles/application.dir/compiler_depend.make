@@ -80,6 +80,7 @@ CMakeFiles/application.dir/src/main.cpp.o: /home/chiono/Documents/Programming/Pr
   /usr/include/c++/14/bits/basic_string.tcc \
   /usr/include/c++/14/bits/char_traits.h \
   /usr/include/c++/14/bits/charconv.h \
+  /usr/include/c++/14/bits/codecvt.h \
   /usr/include/c++/14/bits/concept_check.h \
   /usr/include/c++/14/bits/cpp_type_traits.h \
   /usr/include/c++/14/bits/cxxabi_forced.h \
@@ -87,6 +88,7 @@ CMakeFiles/application.dir/src/main.cpp.o: /home/chiono/Documents/Programming/Pr
   /usr/include/c++/14/bits/exception.h \
   /usr/include/c++/14/bits/exception_defines.h \
   /usr/include/c++/14/bits/exception_ptr.h \
+  /usr/include/c++/14/bits/fstream.tcc \
   /usr/include/c++/14/bits/functexcept.h \
   /usr/include/c++/14/bits/functional_hash.h \
   /usr/include/c++/14/bits/hash_bytes.h \
@@ -111,6 +113,7 @@ CMakeFiles/application.dir/src/main.cpp.o: /home/chiono/Documents/Programming/Pr
   /usr/include/c++/14/bits/range_access.h \
   /usr/include/c++/14/bits/refwrap.h \
   /usr/include/c++/14/bits/requires_hosted.h \
+  /usr/include/c++/14/bits/sstream.tcc \
   /usr/include/c++/14/bits/std_abs.h \
   /usr/include/c++/14/bits/stl_algobase.h \
   /usr/include/c++/14/bits/stl_construct.h \
@@ -144,6 +147,7 @@ CMakeFiles/application.dir/src/main.cpp.o: /home/chiono/Documents/Programming/Pr
   /usr/include/c++/14/ext/numeric_traits.h \
   /usr/include/c++/14/ext/string_conversions.h \
   /usr/include/c++/14/ext/type_traits.h \
+  /usr/include/c++/14/fstream \
   /usr/include/c++/14/initializer_list \
   /usr/include/c++/14/ios \
   /usr/include/c++/14/iosfwd \
@@ -152,6 +156,7 @@ CMakeFiles/application.dir/src/main.cpp.o: /home/chiono/Documents/Programming/Pr
   /usr/include/c++/14/new \
   /usr/include/c++/14/ostream \
   /usr/include/c++/14/pstl/pstl_config.h \
+  /usr/include/c++/14/sstream \
   /usr/include/c++/14/stdexcept \
   /usr/include/c++/14/streambuf \
   /usr/include/c++/14/string \
@@ -161,8 +166,10 @@ CMakeFiles/application.dir/src/main.cpp.o: /home/chiono/Documents/Programming/Pr
   /usr/include/c++/14/type_traits \
   /usr/include/c++/14/typeinfo \
   /usr/include/c++/14/x86_64-redhat-linux/bits/atomic_word.h \
+  /usr/include/c++/14/x86_64-redhat-linux/bits/basic_file.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/c++allocator.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/c++config.h \
+  /usr/include/c++/14/x86_64-redhat-linux/bits/c++io.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/c++locale.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/cpu_defines.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/ctype_base.h \
@@ -242,6 +249,8 @@ CMakeFiles/application.dir/src/main.cpp.o: /home/chiono/Documents/Programming/Pr
 
 /usr/include/c++/14/string:
 
+/usr/include/c++/14/sstream:
+
 /usr/include/c++/14/new:
 
 /usr/include/stdlib.h:
@@ -251,6 +260,8 @@ CMakeFiles/application.dir/src/main.cpp.o: /home/chiono/Documents/Programming/Pr
 /usr/include/c++/14/iosfwd:
 
 /usr/include/c++/14/initializer_list:
+
+/usr/include/c++/14/fstream:
 
 /usr/include/c++/14/ext/type_traits.h:
 
@@ -273,6 +284,10 @@ CMakeFiles/application.dir/src/main.cpp.o: /home/chiono/Documents/Programming/Pr
 /usr/include/c++/14/cstdio:
 
 /usr/include/c++/14/cerrno:
+
+/usr/include/c++/14/bits/version.h:
+
+/usr/include/c++/14/bits/utility.h:
 
 /usr/include/bits/wchar.h:
 
@@ -418,6 +433,8 @@ CMakeFiles/application.dir/src/main.cpp.o: /home/chiono/Documents/Programming/Pr
 
 /usr/include/c++/14/bits/exception.h:
 
+/usr/include/c++/14/bits/sstream.tcc:
+
 /usr/include/bits/long-double.h:
 
 /home/chiono/Documents/Programming/Projects/TestingOpenGL/FirstSteps/src/main.cpp:
@@ -524,13 +541,21 @@ CMakeFiles/application.dir/src/main.cpp.o: /home/chiono/Documents/Programming/Pr
 
 /usr/include/c++/14/bits/basic_string.tcc:
 
+/usr/include/c++/14/bits/codecvt.h:
+
+/usr/include/c++/14/bits/istream.tcc:
+
 /usr/include/pthread.h:
 
 /usr/include/c++/14/bits/functexcept.h:
 
+/usr/include/c++/14/x86_64-redhat-linux/bits/c++io.h:
+
 /usr/include/c++/14/bits/concept_check.h:
 
 /usr/include/c++/14/bits/cpp_type_traits.h:
+
+/usr/include/c++/14/bits/fstream.tcc:
 
 /usr/include/c++/14/bits/char_traits.h:
 
@@ -540,15 +565,13 @@ CMakeFiles/application.dir/src/main.cpp.o: /home/chiono/Documents/Programming/Pr
 
 /usr/include/c++/14/bits/ios_base.h:
 
-/usr/include/c++/14/bits/istream.tcc:
-
 /usr/include/c++/14/bits/locale_classes.tcc:
 
 /usr/include/bits/types/sigset_t.h:
 
 /usr/include/c++/14/bits/move.h:
 
-/usr/include/c++/14/bits/utility.h:
+/usr/include/c++/14/x86_64-redhat-linux/bits/basic_file.h:
 
 /usr/include/c++/14/ios:
 
@@ -585,5 +608,3 @@ CMakeFiles/application.dir/src/main.cpp.o: /home/chiono/Documents/Programming/Pr
 /usr/include/c++/14/bits/stl_iterator_base_funcs.h:
 
 /usr/include/c++/14/bits/stl_iterator_base_types.h:
-
-/usr/include/c++/14/bits/version.h:

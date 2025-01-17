@@ -5,6 +5,29 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <signal.h>
+
+#define ASSERT(x) if (!(x)) raise(SIGTRAP) // The raise() function sends a signal to the calling process, and SIGTRAP stops program state when debugging. When running, the program aborts.
+#define CallGL(x) clearErrorGL();\
+    x;\
+    ASSERT(logCallGL(#x, __FILE__, __LINE__)) // This whole macro lets us wrap the OpenGL functions instead of calling clearErrorGL() and ASSERT(logCallGL()) before and after every OpenGL function call. The first argument transforms 'x' into a string, the second argument is a predefined macro that expands to the name of the current source file as a string literal, and the third argument is a predefined macro that expands to the current line number in the source file.
+
+static void clearErrorGL()
+{   
+    while(glGetError() != GL_NO_ERROR)
+        ;
+}
+
+static bool logCallGL(const char * function, const char * file, int line)
+{
+    while(GLenum error = glGetError())
+    {
+        std::cout << "[OpenGL Error] (0x" << std::hex << error; // Transformed into hexadecimal format to conform to OpenGL documentation
+        std::cout << std::dec << "): " << function << " " << file << ":"  << line << std::endl; // Go back to decimal, otherwise 'line' gets printed as an hexadecimal number!
+        return false;
+    }
+    return true;
+}
 
 struct ShaderProgramSource
 {
@@ -144,9 +167,9 @@ int main(void)
     };
 
     unsigned int buffer;
-    glGenBuffers(1, &buffer); // Requesting OpenGL for 1 buffer. The buffer IDs are stored in buffer.
-    glBindBuffer(GL_ARRAY_BUFFER, buffer); // Selecting the buffer that we "generated" in the last function call
-    glBufferData(GL_ARRAY_BUFFER, 4 * 2 * sizeof(float), positions, GL_STATIC_DRAW); // Filling the buffer with data
+    CallGL(glGenBuffers(1, &buffer)); // Requesting OpenGL for 1 buffer. The buffer IDs are stored in buffer.
+    CallGL(glBindBuffer(GL_ARRAY_BUFFER, buffer)); // Selecting the buffer that we "generated" in the last function call
+    CallGL(glBufferData(GL_ARRAY_BUFFER, 4 * 2 * sizeof(float), positions, GL_STATIC_DRAW)); // Filling the buffer with data
 
     /*
         Tell OpenGL how to interpret data:
@@ -157,25 +180,25 @@ int main(void)
             stride = 2 * sizeof(float) --> bytes in between vertices
             pointer = 0 --> offset of the vertex attribute
     */
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), 0);
+    CallGL(glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), 0));
     // 0 --> the index of the vertex attribute to be enabled
-    glEnableVertexAttribArray(0);
+    CallGL(glEnableVertexAttribArray(0));
 
     unsigned int indexBufferObject;
-    glGenBuffers(1, &indexBufferObject);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferObject); // Selecting the buffer that we "generated" in the last function call
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, 6 * sizeof(unsigned int), indices, GL_STATIC_DRAW); // Filling the buffer with data
+    CallGL(glGenBuffers(1, &indexBufferObject));
+    CallGL(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferObject)); // Selecting the buffer that we "generated" in the last function call
+    CallGL(glBufferData(GL_ELEMENT_ARRAY_BUFFER, 6 * sizeof(unsigned int), indices, GL_STATIC_DRAW)); // Filling the buffer with data
 
     ShaderProgramSource source = parseShader("../resources/shaders/basic.shader"); // The relative path is relative to the executable, not to the source code!
     unsigned int shader = createShader(source.vertexSourceCode, source.fragmentSourceCode);
-    glUseProgram(shader);
+    CallGL(glUseProgram(shader));
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
 
         /* Render here */
-        glClear(GL_COLOR_BUFFER_BIT);
+        CallGL(glClear(GL_COLOR_BUFFER_BIT));
 
         // glDrawArrays(GL_TRIANGLES, 0, 6);
         /*
@@ -185,13 +208,13 @@ int main(void)
             type - type of data inside the index buffer
             indices - offset of the first index in the array in the data store of the buffer currently bound to the GL_ELEMENT_ARRAY_BUFFER 
         */
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
+        CallGL(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
 
         /* Swap front and back buffers */
-        glfwSwapBuffers(window);
+        CallGL(glfwSwapBuffers(window));
 
         /* Poll for and process events */
-        glfwPollEvents();
+        CallGL(glfwPollEvents());
     
     }
 

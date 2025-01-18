@@ -142,6 +142,8 @@ int main(void)
     /* Make the window's context current */
     glfwMakeContextCurrent(window);
 
+    glfwSwapInterval(1); // Syncs your rendering loop to the refresh rate of the monitor - VSync
+
     int version = gladLoadGL(glfwGetProcAddress);
 
     if (version == 0)
@@ -193,12 +195,22 @@ int main(void)
     unsigned int shader = createShader(source.vertexSourceCode, source.fragmentSourceCode);
     CallGL(glUseProgram(shader));
 
+    // Uniforms can only be sent to the shader after the call 'glUseProgram()' is done
+    CallGL(int location = glGetUniformLocation(shader, "u_Color")); // Obtains the index of the u_Color variable in the shader
+    ASSERT(location != -1); // OpenGL actually returns '-1' even if the variable is declared in the shader. The only time that happens is when the variable is not used in the shader
+    CallGL(glUniform4f(location, 0.8f, 0.3f, 0.8f, 1.0f)); // Specifies the value of a uniform variable composed of 4 floats. Check 'glUniform' in the OpenGL documentation for more information.
+
+    float r = 0.0f; // Used to update the 'R' in 'RGB'
+    float increment = 0.05f;
+
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
 
         /* Render here */
         CallGL(glClear(GL_COLOR_BUFFER_BIT));
+
+        CallGL(glUniform4f(location, r, 0.3f, 0.8f, 1.0f)); 
 
         // glDrawArrays(GL_TRIANGLES, 0, 6);
         /*
@@ -209,6 +221,14 @@ int main(void)
             indices - offset of the first index in the array in the data store of the buffer currently bound to the GL_ELEMENT_ARRAY_BUFFER 
         */
         CallGL(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
+
+        // Some logic to change color
+        if (r > 1.0f)
+            increment = -0.05f;
+        else if (r < 0.0f)
+            increment = 0.05f;
+
+        r += increment;
 
         /* Swap front and back buffers */
         CallGL(glfwSwapBuffers(window));

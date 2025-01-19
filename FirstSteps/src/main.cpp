@@ -131,6 +131,10 @@ int main(void)
     if (!glfwInit())
         return -1;
 
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); // Setting OpenGL version for 3.x
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3); // Setting OpenGL version y.3
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // OpenGL profiles define sets of features and behaviors of the API, allowing developers to target specific versions or subsets of OpenGL functionality GLFW_OPENGL_CORE_PROFILE only includes modern OpenGL features introduced in OpenGL 3.2 and later. GLFW_OPENGL_COMPAT_PROFILE includes both modern features and legacy OpenGL functionality.
+
     /* Create a windowed mode window and its OpenGL context */
     window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
     if (!window)
@@ -168,11 +172,17 @@ int main(void)
         2, 3, 0
     };
 
+    unsigned int vertexArrayObject;
+    CallGL(glGenVertexArrays(1, &vertexArrayObject)); // generate vertex array object IDs
+    CallGL(glBindVertexArray(vertexArrayObject)); // binds a vertex array object
+
     unsigned int buffer;
     CallGL(glGenBuffers(1, &buffer)); // Requesting OpenGL for 1 buffer. The buffer IDs are stored in buffer.
     CallGL(glBindBuffer(GL_ARRAY_BUFFER, buffer)); // Selecting the buffer that we "generated" in the last function call
     CallGL(glBufferData(GL_ARRAY_BUFFER, 4 * 2 * sizeof(float), positions, GL_STATIC_DRAW)); // Filling the buffer with data
 
+    // 0 --> the index of the vertex attribute to be enabled
+    CallGL(glEnableVertexAttribArray(0));
     /*
         Tell OpenGL how to interpret data:
             index = 0 --> index of the vertex attribute to be modified
@@ -182,9 +192,7 @@ int main(void)
             stride = 2 * sizeof(float) --> bytes in between vertices
             pointer = 0 --> offset of the vertex attribute
     */
-    CallGL(glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), 0));
-    // 0 --> the index of the vertex attribute to be enabled
-    CallGL(glEnableVertexAttribArray(0));
+    CallGL(glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), 0)); // This line of code also links the currently bound buffer with the currently bound vertex array object. That is why after we clean the slate before entrying the loop, we do not need to bind the array buffer again. 
 
     unsigned int indexBufferObject;
     CallGL(glGenBuffers(1, &indexBufferObject));
@@ -203,6 +211,12 @@ int main(void)
     float r = 0.0f; // Used to update the 'R' in 'RGB'
     float increment = 0.05f;
 
+    // Unbinding buffers
+    CallGL(glBindVertexArray(0));
+    CallGL(glUseProgram(0));
+    CallGL(glBindBuffer(GL_ARRAY_BUFFER, 0));
+    CallGL(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0));
+
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
@@ -210,7 +224,9 @@ int main(void)
         /* Render here */
         CallGL(glClear(GL_COLOR_BUFFER_BIT));
 
+        CallGL(glUseProgram(shader));
         CallGL(glUniform4f(location, r, 0.3f, 0.8f, 1.0f)); 
+        CallGL(glBindVertexArray(vertexArrayObject)); // Accounts for both glBindBuffer due to a previous glVertexAttribPointer function call
 
         // glDrawArrays(GL_TRIANGLES, 0, 6);
         /*

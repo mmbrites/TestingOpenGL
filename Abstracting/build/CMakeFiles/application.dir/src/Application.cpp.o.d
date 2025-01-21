@@ -157,4 +157,10 @@ CMakeFiles/application.dir/src/Application.cpp.o: \
  /usr/include/bits/signal_ext.h \
  /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/Renderer.h \
  /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/VertexBuffer.h \
- /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/IndexBuffer.h
+ /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/IndexBuffer.h \
+ /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/VertexArray.h \
+ /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/VertexBufferLayout.h \
+ /usr/include/c++/14/vector /usr/include/c++/14/bits/stl_uninitialized.h \
+ /usr/include/c++/14/bits/stl_vector.h \
+ /usr/include/c++/14/bits/stl_bvector.h \
+ /usr/include/c++/14/bits/vector.tcc

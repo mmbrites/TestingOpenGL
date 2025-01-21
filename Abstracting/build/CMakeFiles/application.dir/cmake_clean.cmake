@@ -5,8 +5,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/application.dir/src/IndexBuffer.cpp.o.d"
   "CMakeFiles/application.dir/src/Renderer.cpp.o"
   "CMakeFiles/application.dir/src/Renderer.cpp.o.d"
+  "CMakeFiles/application.dir/src/VertexArray.cpp.o"
+  "CMakeFiles/application.dir/src/VertexArray.cpp.o.d"
   "CMakeFiles/application.dir/src/VertexBuffer.cpp.o"
   "CMakeFiles/application.dir/src/VertexBuffer.cpp.o.d"
+  "CMakeFiles/application.dir/src/VertexBufferLayout.cpp.o"
+  "CMakeFiles/application.dir/src/VertexBufferLayout.cpp.o.d"
   "application"
   "application.pdb"
 )

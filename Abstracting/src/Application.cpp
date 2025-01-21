@@ -10,6 +10,7 @@
 #include "Renderer.h"
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
+#include "VertexArray.h"
 
 struct ShaderProgramSource
 {
@@ -155,24 +156,12 @@ int main(void)
             2, 3, 0
         };
 
-        unsigned int vertexArrayObject;
-        CallGL(glGenVertexArrays(1, &vertexArrayObject)); // generate vertex array object IDs
-        CallGL(glBindVertexArray(vertexArrayObject)); // binds a vertex array object
-
+        VertexArray va;
         VertexBuffer vb(positions, 4 * 2 * sizeof(float));
-
-        // 0 --> the index of the vertex attribute to be enabled
-        CallGL(glEnableVertexAttribArray(0));
-        /*
-            Tell OpenGL how to interpret data:
-                index = 0 --> index of the vertex attribute to be modified
-                size = 2 --> size of the vertex attribute
-                type = GL_FLOAT --> type of the contents in the vertex attribute
-                normalized = GL_FALSE --> normalising is changing the range to 0 - 1
-                stride = 2 * sizeof(float) --> bytes in between vertices
-                pointer = 0 --> offset of the vertex attribute
-        */
-        CallGL(glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), 0)); // This line of code also links the currently bound buffer with the currently bound vertex array object. That is why after we clean the slate before entrying the loop, we do not need to bind the array buffer again. 
+        
+        VertexBufferLayout layout;
+        layout.push<float>(2); // The parameter number corresponds to the number of arguments per elements, in this case, we are using an (x, y) model, so there are only two arguments
+        va.addBuffer(vb, layout);
 
         IndexBuffer ib(indices, 6);
 
@@ -189,7 +178,7 @@ int main(void)
         float increment = 0.05f;
 
         // Unbinding buffers
-        CallGL(glBindVertexArray(0));
+        va.unbind();
         CallGL(glUseProgram(0));
         CallGL(glBindBuffer(GL_ARRAY_BUFFER, 0));
         CallGL(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0));
@@ -203,7 +192,7 @@ int main(void)
 
             CallGL(glUseProgram(shader));
             CallGL(glUniform4f(location, r, 0.3f, 0.8f, 1.0f)); 
-            CallGL(glBindVertexArray(vertexArrayObject)); // Accounts for both glBindBuffer due to a previous glVertexAttribPointer function call
+            va.bind();
 
             // glDrawArrays(GL_TRIANGLES, 0, 6);
             /*

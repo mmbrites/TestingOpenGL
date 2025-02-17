@@ -12,7 +12,7 @@ add_library(glad STATIC ${GLAD_SOURCES})
 
 # Source files for your project
 set(SRC_FILES
-    src/Application.cpp src/VertexBuffer.h src/VertexBuffer.cpp src/IndexBuffer.h src/IndexBuffer.cpp src/Renderer.h src/Renderer.cpp src/VertexArray.h src/VertexArray.cpp src/VertexBufferLayout.h src/VertexBufferLayout.cpp
+    src/Application.cpp src/VertexBuffer.h src/VertexBuffer.cpp src/IndexBuffer.h src/IndexBuffer.cpp src/Renderer.h src/Renderer.cpp src/VertexArray.h src/VertexArray.cpp src/VertexBufferLayout.h src/VertexBufferLayout.cpp src/Shader.h src/Shader.cpp
 )
 
 # Create the executable

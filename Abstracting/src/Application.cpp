@@ -11,99 +11,7 @@
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
 #include "VertexArray.h"
-
-struct ShaderProgramSource
-{
-    std::string vertexSourceCode;
-    std::string fragmentSourceCode;
-};
-
-static ShaderProgramSource parseShader(const std::string & filePath)
-{
-
-    // Not the most efficient way of dealing with files. The C way is better for performance
-    std::ifstream stream(filePath);
-
-    enum class ShaderType
-    {
-        NONE = -1, VERTEX = 0, FRAGMENT = 1
-    };
-
-    std::string line;
-    std::stringstream ss[2]; // Two stringstreams: one for the vertex shader, one the fragment shader
-    ShaderType type = ShaderType::NONE;
-    while (getline(stream, line)) // 'line' stores the result
-    {
-        if (line.find("shader") != std::string::npos) // "find" returns the position of the first character of the found substring or 'npos' if no such substring is found.
-        {
-            if (line.find("vertex") != std::string::npos)
-                type = ShaderType::VERTEX;
-            else if (line.find("fragment") != std::string::npos)
-                type = ShaderType::FRAGMENT;
-
-        }
-        else
-            ss[(int)type] << line << '\n';
-    }
-
-    return { ss[0].str(), ss[1].str() };
-
-}
-
-static unsigned int compileShader(unsigned int type, const std::string & source)
-{
-    
-    unsigned int id = glCreateShader(type);
-    const char * src = source.c_str();
-    glShaderSource(id, 1, &src, nullptr);
-    glCompileShader(id);
-
-    int result;
-    glGetShaderiv(id, GL_COMPILE_STATUS, &result);
-    if (result == GL_FALSE)
-    {
-        
-        int length;
-        glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length);
-        char * message = (char *) alloca(length * sizeof(char)); // Since C++ does not let you declare a C-style array with an arbitrary length, and you want to declare it on the stack, you can use alloca -- the only problem arises when the array is too big, since it may cause a stack overflow.
-        glGetShaderInfoLog(id, length, &length, message);
-
-        std::cout << "Failed to compile " << (type == GL_VERTEX_SHADER ? "vertex" : "fragment") << " shader!" << std::endl;
-        std::cout << message << std::endl;
-
-        glDeleteShader(id);
-        return 0;
-
-    }
-
-    return id;
-
-}
-
-/*
-    vertexShader - vertex shader source code
-    fragmentShader - fragment shader source code
-*/
-static unsigned int createShader(const std::string & vertexShader, const std::string & fragmentShader)
-{
-
-    // Code necessary to compile both shaders
-    unsigned int program = glCreateProgram();
-    unsigned int vs = compileShader(GL_VERTEX_SHADER, vertexShader);
-    unsigned int fs = compileShader(GL_FRAGMENT_SHADER, fragmentShader);
-
-    glAttachShader(program, vs);
-    glAttachShader(program, fs);
-    glLinkProgram(program);
-    glValidateProgram(program);
-
-    // Frees memory - although there are some that like to argue that it is inneffective in case you want to debug the shader source code
-    glDeleteShader(vs);
-    glDeleteShader(fs);
-
-    return program;
-
-}
+#include "Shader.h"
 
 int main(void)
 {
@@ -165,23 +73,18 @@ int main(void)
 
         IndexBuffer ib(indices, 6);
 
-        ShaderProgramSource source = parseShader("../resources/shaders/basic.shader"); // The relative path is relative to the executable, not to the source code!
-        unsigned int shader = createShader(source.vertexSourceCode, source.fragmentSourceCode);
-        CallGL(glUseProgram(shader));
-
-        // Uniforms can only be sent to the shader after the call 'glUseProgram()' is done
-        CallGL(int location = glGetUniformLocation(shader, "u_Color")); // Obtains the index of the u_Color variable in the shader
-        ASSERT(location != -1); // OpenGL actually returns '-1' even if the variable is declared in the shader. The only time that happens is when the variable is not used in the shader
-        CallGL(glUniform4f(location, 0.8f, 0.3f, 0.8f, 1.0f)); // Specifies the value of a uniform variable composed of 4 floats. Check 'glUniform' in the OpenGL documentation for more information.
-
-        float r = 0.0f; // Used to update the 'R' in 'RGB'
-        float increment = 0.05f;
+        Shader shader("../resources/shaders/basic.shader");
+        shader.bind();
+        shader.setUniform4f("u_Color", 0.8f, 0.3f, 0.8f, 1.0f);
 
         // Unbinding buffers
         va.unbind();
-        CallGL(glUseProgram(0));
-        CallGL(glBindBuffer(GL_ARRAY_BUFFER, 0));
-        CallGL(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0));
+        vb.unbind();
+        ib.unbind();
+        shader.unbind();
+
+        float r = 0.0f; // Used to update the 'R' in 'RGB'
+        float increment = 0.05f;
 
         /* Loop until the user closes the window */
         while (!glfwWindowShouldClose(window))
@@ -190,8 +93,9 @@ int main(void)
             /* Render here */
             CallGL(glClear(GL_COLOR_BUFFER_BIT));
 
-            CallGL(glUseProgram(shader));
-            CallGL(glUniform4f(location, r, 0.3f, 0.8f, 1.0f)); 
+            shader.bind();
+            shader.setUniform4f("u_Color", r, 0.3f, 0.8f, 1.0f);
+
             va.bind();
 
             // glDrawArrays(GL_TRIANGLES, 0, 6);
@@ -220,7 +124,6 @@ int main(void)
         
         }
 
-        CallGL(glDeleteProgram(shader));
     }
 
     glfwTerminate();

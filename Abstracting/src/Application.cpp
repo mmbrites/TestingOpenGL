@@ -9,6 +9,7 @@
 
 #include "Renderer.h"
 #include "VertexBuffer.h"
+#include "VertexBufferLayout.h"
 #include "IndexBuffer.h"
 #include "VertexArray.h"
 #include "Shader.h"
@@ -83,6 +84,8 @@ int main(void)
         ib.unbind();
         shader.unbind();
 
+        Renderer renderer;
+
         float r = 0.0f; // Used to update the 'R' in 'RGB'
         float increment = 0.05f;
 
@@ -91,22 +94,12 @@ int main(void)
         {
 
             /* Render here */
-            CallGL(glClear(GL_COLOR_BUFFER_BIT));
+            renderer.clear();
 
             shader.bind();
             shader.setUniform4f("u_Color", r, 0.3f, 0.8f, 1.0f);
 
-            va.bind();
-
-            // glDrawArrays(GL_TRIANGLES, 0, 6);
-            /*
-                Used most of the time instead of glDrawArrays since it allows the specification of an index buffer.
-                mode - GL_TRIANGLES
-                count - number of indices we are drawing
-                type - type of data inside the index buffer
-                indices - offset of the first index in the array in the data store of the buffer currently bound to the GL_ELEMENT_ARRAY_BUFFER 
-            */
-            CallGL(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
+            renderer.draw(va, ib, shader);
 
             // Some logic to change color
             if (r > 1.0f)

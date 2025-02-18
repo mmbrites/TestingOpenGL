@@ -126,9 +126,13 @@ CMakeFiles/application.dir/src/Shader.cpp.o: \
  /usr/include/bits/getopt_core.h /usr/include/bits/unistd_ext.h \
  /usr/include/linux/close_range.h /usr/include/bits/ss_flags.h \
  /usr/include/bits/types/struct_sigstack.h /usr/include/bits/sigthread.h \
- /usr/include/bits/signal_ext.h /usr/include/c++/14/iostream \
- /usr/include/c++/14/ostream /usr/include/c++/14/ios \
- /usr/include/c++/14/exception /usr/include/c++/14/bits/exception_ptr.h \
+ /usr/include/bits/signal_ext.h \
+ /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/VertexArray.h \
+ /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/VertexBuffer.h \
+ /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/IndexBuffer.h \
+ /usr/include/c++/14/iostream /usr/include/c++/14/ostream \
+ /usr/include/c++/14/ios /usr/include/c++/14/exception \
+ /usr/include/c++/14/bits/exception_ptr.h \
  /usr/include/c++/14/bits/cxxabi_init_exception.h \
  /usr/include/c++/14/typeinfo /usr/include/c++/14/bits/nested_exception.h \
  /usr/include/c++/14/bits/ios_base.h /usr/include/c++/14/ext/atomicity.h \

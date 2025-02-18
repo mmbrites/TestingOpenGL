@@ -156,14 +156,9 @@ CMakeFiles/application.dir/src/Application.cpp.o: \
  /usr/include/bits/types/struct_sigstack.h /usr/include/bits/sigthread.h \
  /usr/include/bits/signal_ext.h \
  /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/Renderer.h \
+ /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/VertexArray.h \
  /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/VertexBuffer.h \
  /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/IndexBuffer.h \
- /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/VertexArray.h \
- /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/VertexBufferLayout.h \
- /usr/include/c++/14/vector /usr/include/c++/14/bits/stl_uninitialized.h \
- /usr/include/c++/14/bits/stl_vector.h \
- /usr/include/c++/14/bits/stl_bvector.h \
- /usr/include/c++/14/bits/vector.tcc \
  /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/Shader.h \
  /usr/include/c++/14/unordered_map \
  /usr/include/c++/14/bits/unordered_map.h \
@@ -172,4 +167,9 @@ CMakeFiles/application.dir/src/Application.cpp.o: \
  /usr/include/c++/14/ext/aligned_buffer.h \
  /usr/include/c++/14/bits/enable_special_members.h \
  /usr/include/c++/14/bits/node_handle.h \
- /usr/include/c++/14/bits/erase_if.h
+ /usr/include/c++/14/bits/erase_if.h \
+ /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/VertexBufferLayout.h \
+ /usr/include/c++/14/vector /usr/include/c++/14/bits/stl_uninitialized.h \
+ /usr/include/c++/14/bits/stl_vector.h \
+ /usr/include/c++/14/bits/stl_bvector.h \
+ /usr/include/c++/14/bits/vector.tcc

@@ -13,6 +13,7 @@
 #include "IndexBuffer.h"
 #include "VertexArray.h"
 #include "Shader.h"
+#include "Texture.h"
 
 int main(void)
 {
@@ -53,10 +54,10 @@ int main(void)
 
     {   // Creating scope instead of heap allocating Vertex and Index buffers
         float positions[] = {
-            -0.5f, -0.5f, // 0
-            0.5f, -0.5f, // 1
-            0.5f,  0.5f, // 2
-            -0.5f,  0.5f  // 3
+            -0.5f, -0.5f, 0.0f, 0.0f, // 0 & the bottom-left corner of the texture
+            0.5f, -0.5f, 1.0f, 0.0f, // 1 & the bottom-right corner of the texture
+            0.5f,  0.5f, 1.0f, 1.0f, // 2 & the top-right corner of the texture
+            -0.5f,  0.5f,  0.0f, 1.0f // 3 & the top-left corner of the texture
         };
 
         // Index Buffer: Vertex indices used for each triangle. Note: you can use unsigned char or unsigned short if you want to save memory, but the type has to be "unsigned"
@@ -65,11 +66,15 @@ int main(void)
             2, 3, 0
         };
 
+        CallGL(glEnable(GL_BLEND)); // Enables blending
+        CallGL(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)); // used in OpenGL to set the blending mode for rendering transparent or semi-transparent objects. GL_SRC_ALPHA: This is the source factor. It means that the transparency of the source pixel will be based on its alpha value. A fully opaque source will contribute fully to the final color, while a transparent source will contribute less. GL_ONE_MINUS_SRC_ALPHA: This is the destination factor. It means the destination's transparency will be based on the inverse of the source's alpha value. So, a fully opaque source will let the destination show through, while a transparent source will mix more with the destination.
+
         VertexArray va;
-        VertexBuffer vb(positions, 4 * 2 * sizeof(float));
+        VertexBuffer vb(positions, 4 * 4 * sizeof(float));
         
         VertexBufferLayout layout;
         layout.push<float>(2); // The parameter number corresponds to the number of arguments per elements, in this case, we are using an (x, y) model, so there are only two arguments
+        layout.push<float>(2);
         va.addBuffer(vb, layout);
 
         IndexBuffer ib(indices, 6);
@@ -77,6 +82,10 @@ int main(void)
         Shader shader("../resources/shaders/basic.shader");
         shader.bind();
         shader.setUniform4f("u_Color", 0.8f, 0.3f, 0.8f, 1.0f);
+
+        Texture texture("../resources/textures/Sunny.png");
+        texture.bind(); // Binding texture to slot 0
+        shader.setUniform1i("u_Texture", 0); // '0' because we bound our texture to slot 0!
 
         // Unbinding buffers
         va.unbind();

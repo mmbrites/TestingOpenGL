@@ -172,4 +172,5 @@ CMakeFiles/application.dir/src/Application.cpp.o: \
  /usr/include/c++/14/vector /usr/include/c++/14/bits/stl_uninitialized.h \
  /usr/include/c++/14/bits/stl_vector.h \
  /usr/include/c++/14/bits/stl_bvector.h \
- /usr/include/c++/14/bits/vector.tcc
+ /usr/include/c++/14/bits/vector.tcc \
+ /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/Texture.h

@@ -167,6 +167,34 @@ CMakeFiles/application.dir/src/Shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/application.dir/src/Shader.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/Shader.cpp -o CMakeFiles/application.dir/src/Shader.cpp.s
 
+CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: CMakeFiles/application.dir/flags.make
+CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/vendor/stb_image/stb_image.cpp
+CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: CMakeFiles/application.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o -MF CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o.d -o CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o -c /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/vendor/stb_image/stb_image.cpp
+
+CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/vendor/stb_image/stb_image.cpp > CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.i
+
+CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/vendor/stb_image/stb_image.cpp -o CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.s
+
+CMakeFiles/application.dir/src/Texture.cpp.o: CMakeFiles/application.dir/flags.make
+CMakeFiles/application.dir/src/Texture.cpp.o: /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/Texture.cpp
+CMakeFiles/application.dir/src/Texture.cpp.o: CMakeFiles/application.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/application.dir/src/Texture.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/Texture.cpp.o -MF CMakeFiles/application.dir/src/Texture.cpp.o.d -o CMakeFiles/application.dir/src/Texture.cpp.o -c /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/Texture.cpp
+
+CMakeFiles/application.dir/src/Texture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/application.dir/src/Texture.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/Texture.cpp > CMakeFiles/application.dir/src/Texture.cpp.i
+
+CMakeFiles/application.dir/src/Texture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/application.dir/src/Texture.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/Texture.cpp -o CMakeFiles/application.dir/src/Texture.cpp.s
+
 # Object files for target application
 application_OBJECTS = \
 "CMakeFiles/application.dir/src/Application.cpp.o" \
@@ -175,7 +203,9 @@ application_OBJECTS = \
 "CMakeFiles/application.dir/src/Renderer.cpp.o" \
 "CMakeFiles/application.dir/src/VertexArray.cpp.o" \
 "CMakeFiles/application.dir/src/VertexBufferLayout.cpp.o" \
-"CMakeFiles/application.dir/src/Shader.cpp.o"
+"CMakeFiles/application.dir/src/Shader.cpp.o" \
+"CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o" \
+"CMakeFiles/application.dir/src/Texture.cpp.o"
 
 # External object files for target application
 application_EXTERNAL_OBJECTS =
@@ -187,13 +217,15 @@ application: CMakeFiles/application.dir/src/Renderer.cpp.o
 application: CMakeFiles/application.dir/src/VertexArray.cpp.o
 application: CMakeFiles/application.dir/src/VertexBufferLayout.cpp.o
 application: CMakeFiles/application.dir/src/Shader.cpp.o
+application: CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o
+application: CMakeFiles/application.dir/src/Texture.cpp.o
 application: CMakeFiles/application.dir/build.make
 application: glfw/src/libglfw3.a
 application: libglad.a
 application: /usr/lib64/librt.a
 application: /usr/lib64/libm.so
 application: CMakeFiles/application.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable application"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable application"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/application.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

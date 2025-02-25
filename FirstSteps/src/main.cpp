@@ -159,6 +159,10 @@ int main(void)
     std::cout << glGetString(GL_VERSION) << std::endl;
     std::cout << "GL " << GLAD_VERSION_MAJOR(version) << "." << GLAD_VERSION_MINOR(version) << std::endl;
 
+    int width, height;
+    glfwGetFramebufferSize(window, &width, &height); // Retrieves the size, in pixels, of the framebuffer of the specified window. Without this function call, Linux window managers override OpenGL's window placement.
+    glViewport(0, 0, width, height);  // A viewport defines the portion of the window where rendering occurs. It maps Normalised Device Coordinates (NDC), which range from -1 to 1, into actual screen coordinates (pixels).
+
     float positions[] = {
         -0.5f, -0.5f, // 0
          0.5f, -0.5f, // 1

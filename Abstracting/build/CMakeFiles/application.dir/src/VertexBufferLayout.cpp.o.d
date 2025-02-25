@@ -129,8 +129,168 @@ CMakeFiles/application.dir/src/VertexBufferLayout.cpp.o: \
  /usr/include/c++/14/ext/aligned_buffer.h \
  /usr/include/c++/14/bits/enable_special_members.h \
  /usr/include/c++/14/bits/node_handle.h \
- /usr/include/c++/14/bits/erase_if.h /usr/include/c++/14/vector \
- /usr/include/c++/14/bits/stl_uninitialized.h \
+ /usr/include/c++/14/bits/erase_if.h /usr/local/include/glm/glm.hpp \
+ /usr/local/include/glm/detail/_fixes.hpp /usr/include/c++/14/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/14/bits/specfun.h \
+ /usr/include/c++/14/limits /usr/include/c++/14/tr1/gamma.tcc \
+ /usr/include/c++/14/tr1/special_function_util.h \
+ /usr/include/c++/14/tr1/bessel_function.tcc \
+ /usr/include/c++/14/tr1/beta_function.tcc \
+ /usr/include/c++/14/tr1/ell_integral.tcc \
+ /usr/include/c++/14/tr1/exp_integral.tcc \
+ /usr/include/c++/14/tr1/hypergeometric.tcc \
+ /usr/include/c++/14/tr1/legendre_function.tcc \
+ /usr/include/c++/14/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/14/tr1/poly_hermite.tcc \
+ /usr/include/c++/14/tr1/poly_laguerre.tcc \
+ /usr/include/c++/14/tr1/riemann_zeta.tcc \
+ /usr/local/include/glm/detail/setup.hpp /usr/include/c++/14/cassert \
+ /usr/include/assert.h /usr/local/include/glm/simd/platform.h \
+ /usr/include/c++/14/cstdint /usr/include/c++/14/climits \
+ /usr/lib/gcc/x86_64-redhat-linux/14/include/limits.h \
+ /usr/lib/gcc/x86_64-redhat-linux/14/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/pthread_stack_min-dynamic.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+ /usr/include/bits/uio_lim.h /usr/include/c++/14/cfloat \
+ /usr/lib/gcc/x86_64-redhat-linux/14/include/float.h \
+ /usr/local/include/glm/fwd.hpp \
+ /usr/local/include/glm/detail/qualifier.hpp \
+ /usr/local/include/glm/detail/setup.hpp /usr/local/include/glm/vec2.hpp \
+ /usr/local/include/glm/ext/vector_bool2.hpp \
+ /usr/local/include/glm/detail/type_vec2.hpp \
+ /usr/local/include/glm/detail/type_vec2.inl \
+ /usr/local/include/glm/detail/compute_vector_relational.hpp \
+ /usr/local/include/glm/ext/vector_bool2_precision.hpp \
+ /usr/local/include/glm/ext/vector_float2.hpp \
+ /usr/local/include/glm/ext/vector_float2_precision.hpp \
+ /usr/local/include/glm/ext/vector_double2.hpp \
+ /usr/local/include/glm/ext/vector_double2_precision.hpp \
+ /usr/local/include/glm/ext/vector_int2.hpp \
+ /usr/local/include/glm/ext/vector_int2_sized.hpp \
+ /usr/local/include/glm/ext/scalar_int_sized.hpp \
+ /usr/local/include/glm/detail/setup.hpp \
+ /usr/local/include/glm/ext/vector_uint2.hpp \
+ /usr/local/include/glm/ext/vector_uint2_sized.hpp \
+ /usr/local/include/glm/ext/scalar_uint_sized.hpp \
+ /usr/local/include/glm/vec3.hpp \
+ /usr/local/include/glm/ext/vector_bool3.hpp \
+ /usr/local/include/glm/detail/type_vec3.hpp \
+ /usr/local/include/glm/detail/type_vec3.inl \
+ /usr/local/include/glm/ext/vector_bool3_precision.hpp \
+ /usr/local/include/glm/ext/vector_float3.hpp \
+ /usr/local/include/glm/ext/vector_float3_precision.hpp \
+ /usr/local/include/glm/ext/vector_double3.hpp \
+ /usr/local/include/glm/ext/vector_double3_precision.hpp \
+ /usr/local/include/glm/ext/vector_int3.hpp \
+ /usr/local/include/glm/ext/vector_int3_sized.hpp \
+ /usr/local/include/glm/ext/vector_uint3.hpp \
+ /usr/local/include/glm/ext/vector_uint3_sized.hpp \
+ /usr/local/include/glm/vec4.hpp \
+ /usr/local/include/glm/ext/vector_bool4.hpp \
+ /usr/local/include/glm/detail/type_vec4.hpp \
+ /usr/local/include/glm/detail/type_vec4.inl \
+ /usr/local/include/glm/ext/vector_bool4_precision.hpp \
+ /usr/local/include/glm/ext/vector_float4.hpp \
+ /usr/local/include/glm/ext/vector_float4_precision.hpp \
+ /usr/local/include/glm/ext/vector_double4.hpp \
+ /usr/local/include/glm/ext/vector_double4_precision.hpp \
+ /usr/local/include/glm/ext/vector_int4.hpp \
+ /usr/local/include/glm/ext/vector_int4_sized.hpp \
+ /usr/local/include/glm/ext/vector_uint4.hpp \
+ /usr/local/include/glm/ext/vector_uint4_sized.hpp \
+ /usr/local/include/glm/mat2x2.hpp \
+ /usr/local/include/glm/ext/matrix_double2x2.hpp \
+ /usr/local/include/glm/detail/type_mat2x2.hpp \
+ /usr/local/include/glm/detail/type_mat2x2.inl \
+ /usr/local/include/glm/matrix.hpp /usr/local/include/glm/mat2x3.hpp \
+ /usr/local/include/glm/ext/matrix_double2x3.hpp \
+ /usr/local/include/glm/detail/type_mat2x3.hpp \
+ /usr/local/include/glm/detail/type_mat2x3.inl \
+ /usr/local/include/glm/ext/matrix_double2x3_precision.hpp \
+ /usr/local/include/glm/ext/matrix_float2x3.hpp \
+ /usr/local/include/glm/ext/matrix_float2x3_precision.hpp \
+ /usr/local/include/glm/mat2x4.hpp \
+ /usr/local/include/glm/ext/matrix_double2x4.hpp \
+ /usr/local/include/glm/detail/type_mat2x4.hpp \
+ /usr/local/include/glm/detail/type_mat2x4.inl \
+ /usr/local/include/glm/ext/matrix_double2x4_precision.hpp \
+ /usr/local/include/glm/ext/matrix_float2x4.hpp \
+ /usr/local/include/glm/ext/matrix_float2x4_precision.hpp \
+ /usr/local/include/glm/mat3x2.hpp \
+ /usr/local/include/glm/ext/matrix_double3x2.hpp \
+ /usr/local/include/glm/detail/type_mat3x2.hpp \
+ /usr/local/include/glm/detail/type_mat3x2.inl \
+ /usr/local/include/glm/ext/matrix_double3x2_precision.hpp \
+ /usr/local/include/glm/ext/matrix_float3x2.hpp \
+ /usr/local/include/glm/ext/matrix_float3x2_precision.hpp \
+ /usr/local/include/glm/mat3x3.hpp \
+ /usr/local/include/glm/ext/matrix_double3x3.hpp \
+ /usr/local/include/glm/detail/type_mat3x3.hpp \
+ /usr/local/include/glm/detail/type_mat3x3.inl \
+ /usr/local/include/glm/ext/matrix_double3x3_precision.hpp \
+ /usr/local/include/glm/ext/matrix_float3x3.hpp \
+ /usr/local/include/glm/ext/matrix_float3x3_precision.hpp \
+ /usr/local/include/glm/mat3x4.hpp \
+ /usr/local/include/glm/ext/matrix_double3x4.hpp \
+ /usr/local/include/glm/detail/type_mat3x4.hpp \
+ /usr/local/include/glm/detail/type_mat3x4.inl \
+ /usr/local/include/glm/ext/matrix_double3x4_precision.hpp \
+ /usr/local/include/glm/ext/matrix_float3x4.hpp \
+ /usr/local/include/glm/ext/matrix_float3x4_precision.hpp \
+ /usr/local/include/glm/mat4x2.hpp \
+ /usr/local/include/glm/ext/matrix_double4x2.hpp \
+ /usr/local/include/glm/detail/type_mat4x2.hpp \
+ /usr/local/include/glm/detail/type_mat4x2.inl \
+ /usr/local/include/glm/ext/matrix_double4x2_precision.hpp \
+ /usr/local/include/glm/ext/matrix_float4x2.hpp \
+ /usr/local/include/glm/ext/matrix_float4x2_precision.hpp \
+ /usr/local/include/glm/mat4x3.hpp \
+ /usr/local/include/glm/ext/matrix_double4x3.hpp \
+ /usr/local/include/glm/detail/type_mat4x3.hpp \
+ /usr/local/include/glm/detail/type_mat4x3.inl \
+ /usr/local/include/glm/ext/matrix_double4x3_precision.hpp \
+ /usr/local/include/glm/ext/matrix_float4x3.hpp \
+ /usr/local/include/glm/ext/matrix_float4x3_precision.hpp \
+ /usr/local/include/glm/mat4x4.hpp \
+ /usr/local/include/glm/ext/matrix_double4x4.hpp \
+ /usr/local/include/glm/detail/type_mat4x4.hpp \
+ /usr/local/include/glm/detail/type_mat4x4.inl \
+ /usr/local/include/glm/ext/matrix_double4x4_precision.hpp \
+ /usr/local/include/glm/ext/matrix_float4x4.hpp \
+ /usr/local/include/glm/ext/matrix_float4x4_precision.hpp \
+ /usr/local/include/glm/detail/func_matrix.inl \
+ /usr/local/include/glm/geometric.hpp \
+ /usr/local/include/glm/detail/func_geometric.inl \
+ /usr/local/include/glm/exponential.hpp \
+ /usr/local/include/glm/detail/type_vec1.hpp \
+ /usr/local/include/glm/detail/type_vec1.inl \
+ /usr/local/include/glm/detail/func_exponential.inl \
+ /usr/local/include/glm/vector_relational.hpp \
+ /usr/local/include/glm/detail/func_vector_relational.inl \
+ /usr/local/include/glm/detail/_vectorize.hpp \
+ /usr/local/include/glm/common.hpp \
+ /usr/local/include/glm/detail/func_common.inl \
+ /usr/local/include/glm/detail/compute_common.hpp \
+ /usr/local/include/glm/ext/matrix_double2x2_precision.hpp \
+ /usr/local/include/glm/ext/matrix_float2x2.hpp \
+ /usr/local/include/glm/ext/matrix_float2x2_precision.hpp \
+ /usr/local/include/glm/trigonometric.hpp \
+ /usr/local/include/glm/detail/func_trigonometric.inl \
+ /usr/local/include/glm/packing.hpp \
+ /usr/local/include/glm/detail/func_packing.inl \
+ /usr/local/include/glm/detail/type_half.hpp \
+ /usr/local/include/glm/detail/type_half.inl \
+ /usr/local/include/glm/integer.hpp \
+ /usr/local/include/glm/detail/func_integer.inl \
+ /usr/include/c++/14/vector /usr/include/c++/14/bits/stl_uninitialized.h \
  /usr/include/c++/14/bits/stl_vector.h \
  /usr/include/c++/14/bits/stl_bvector.h \
  /usr/include/c++/14/bits/vector.tcc

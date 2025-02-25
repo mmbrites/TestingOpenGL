@@ -42,6 +42,11 @@ void Shader::setUniform4f(const std::string & name, float v0, float v1, float v2
     CallGL(glUniform4f(getUniformLocation(name), v0, v1, v2, v3));
 }
 
+void Shader::setUniformMat4f(const std::string & name, const glm::mat4 & matrix)
+{
+    CallGL(glUniformMatrix4fv(getUniformLocation(name), 1, GL_FALSE, &matrix[0][0])); // We do not need to transpose the matrix since GLM stores the matrix in the same way OpenGL does
+}
+
 int Shader::getUniformLocation(const std::string & name)
 {
     if (m_UniformLocationCache.find(name) != m_UniformLocationCache.end())

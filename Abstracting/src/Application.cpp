@@ -15,6 +15,9 @@
 #include "Shader.h"
 #include "Texture.h"
 
+#include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.hpp"
+
 int main(void)
 {
    
@@ -83,9 +86,12 @@ int main(void)
 
         IndexBuffer ib(indices, 6);
 
+        glm::mat4 projection = glm::ortho(-2.0f, 2.0f, -1.5f, 1.5f, -1.0f, 1.0f); // Orthographic projection - means of representing three-dimensional objects in two dimensions. In an orthographic projection, objects that are far way do not get smaller, unlike a perspective projection. The arguments of the function just need to be specified according to the window proportions, in this case, we are using a 640 x 480 window, which adheres to the 4:3 aspect ratio. We can also roughly interpret this as a window resize, where the boundaries are the ones sent to the ortho function.
+
         Shader shader("../resources/shaders/basic.shader");
         shader.bind();
         shader.setUniform4f("u_Color", 0.8f, 0.3f, 0.8f, 1.0f);
+        shader.setUniformMat4f("u_MVP", projection);
 
         Texture texture("../resources/textures/ChernoLogo.png");
         texture.bind(); // Binding texture to slot 0

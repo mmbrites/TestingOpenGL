@@ -18,5 +18,8 @@ set(SRC_FILES
 # Create the executable
 add_executable(application ${SRC_FILES})
 
-# Link against GLFW and GLAD
-target_link_libraries(application glfw glad)
+# Finds the GLM library
+find_package(glm CONFIG REQUIRED)
+
+# Link against GLFW and GLAD. Additionaly, link against GLM.
+target_link_libraries(application glfw glad glm::glm)

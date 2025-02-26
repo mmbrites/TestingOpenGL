@@ -32,7 +32,7 @@ int main(void)
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // OpenGL profiles define sets of features and behaviors of the API, allowing developers to target specific versions or subsets of OpenGL functionality GLFW_OPENGL_CORE_PROFILE only includes modern OpenGL features introduced in OpenGL 3.2 and later. GLFW_OPENGL_COMPAT_PROFILE includes both modern features and legacy OpenGL functionality.
 
     /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+    window = glfwCreateWindow(960, 540, "Hello World", NULL, NULL);
     if (!window)
     {
         glfwTerminate();
@@ -61,10 +61,10 @@ int main(void)
 
     {   // Creating scope instead of heap allocating Vertex and Index buffers
         float positions[] = {
-            -0.5f, -0.5f, 0.0f, 0.0f, // 0 & the bottom-left corner of the texture
-            0.5f, -0.5f, 1.0f, 0.0f, // 1 & the bottom-right corner of the texture
-            0.5f,  0.5f, 1.0f, 1.0f, // 2 & the top-right corner of the texture
-            -0.5f,  0.5f,  0.0f, 1.0f // 3 & the top-left corner of the texture
+             100.0f, 100.0f,  0.0f, 0.0f, // 0 & the bottom-left corner of the texture
+             200.0f, 100.0f,  1.0f, 0.0f, // 1 & the bottom-right corner of the texture
+             200.0f, 200.0f,  1.0f, 1.0f, // 2 & the top-right corner of the texture
+             100.0f,  200.0f,  0.0f, 1.0f // 3 & the top-left corner of the texture
         };
 
         // Index Buffer: Vertex indices used for each triangle. Note: you can use unsigned char or unsigned short if you want to save memory, but the type has to be "unsigned"
@@ -86,7 +86,9 @@ int main(void)
 
         IndexBuffer ib(indices, 6);
 
-        glm::mat4 projection = glm::ortho(-2.0f, 2.0f, -1.5f, 1.5f, -1.0f, 1.0f); // Orthographic projection - means of representing three-dimensional objects in two dimensions. In an orthographic projection, objects that are far way do not get smaller, unlike a perspective projection. The arguments of the function just need to be specified according to the window proportions, in this case, we are using a 640 x 480 window, which adheres to the 4:3 aspect ratio. We can also roughly interpret this as a window resize, where the boundaries are the ones sent to the ortho function.
+        glm::mat4 projection = glm::ortho(0.0f, 960.0f, 0.0f, 540.0f, -1.0f, 1.0f); // Orthographic projection - means of representing three-dimensional objects in two dimensions. In an orthographic projection, objects that are far way do not get smaller, unlike a perspective projection. The arguments of the function just need to be specified according to the window proportions, in this case, we are using a 640 x 480 window, which adheres to the 4:3 aspect ratio. We can also roughly interpret this as a window resize, where the boundaries are the ones sent to the ortho function. Any vertex that is not within these boundaries, is not rendered.
+        glm::vec4 vertexPosition(100.0f, 100.0f, 0.0f, 1.0f);
+        glm::vec4 result = projection * vertexPosition; // Some debug testing do not mind it...
 
         Shader shader("../resources/shaders/basic.shader");
         shader.bind();

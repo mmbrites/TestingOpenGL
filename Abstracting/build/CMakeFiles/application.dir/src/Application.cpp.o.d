@@ -344,4 +344,9 @@ CMakeFiles/application.dir/src/Application.cpp.o: \
  /usr/local/include/glm/ext/matrix_clip_space.inl \
  /usr/local/include/glm/ext/matrix_transform.hpp \
  /usr/local/include/glm/ext/matrix_transform.inl \
- /usr/local/include/glm/gtc/matrix_transform.inl
+ /usr/local/include/glm/gtc/matrix_transform.inl \
+ /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/resources/libraries/imgui-1.91.8/imgui.h \
+ /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/resources/libraries/imgui-1.91.8/imconfig.h \
+ /usr/include/string.h /usr/include/strings.h \
+ /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.h \
+ /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.h

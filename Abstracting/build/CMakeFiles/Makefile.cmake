@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/CMakeLists.txt"
-  "CMakeFiles/3.30.7/CMakeCCompiler.cmake"
-  "CMakeFiles/3.30.7/CMakeCXXCompiler.cmake"
-  "CMakeFiles/3.30.7/CMakeSystem.cmake"
+  "CMakeFiles/3.30.8/CMakeCCompiler.cmake"
+  "CMakeFiles/3.30.8/CMakeCXXCompiler.cmake"
+  "CMakeFiles/3.30.8/CMakeSystem.cmake"
   "/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/glfw/CMake/cmake_uninstall.cmake.in"
   "/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/glfw/CMake/glfw3.pc.in"
   "/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/glfw/CMake/glfw3Config.cmake.in"
@@ -78,6 +78,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/glad.dir/DependInfo.cmake"
+  "CMakeFiles/imgui.dir/DependInfo.cmake"
   "CMakeFiles/application.dir/DependInfo.cmake"
   "glfw/CMakeFiles/uninstall.dir/DependInfo.cmake"
   "glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"

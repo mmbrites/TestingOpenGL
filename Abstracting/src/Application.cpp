@@ -18,6 +18,10 @@
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 
+#include "imgui.h"
+#include "imgui_impl_glfw.h"
+#include "imgui_impl_opengl3.h"
+
 int main(void)
 {
    
@@ -88,13 +92,10 @@ int main(void)
 
         glm::mat4 projection = glm::ortho(0.0f, 960.0f, 0.0f, 540.0f, -1.0f, 1.0f); // Orthographic projection - means of representing three-dimensional objects in two dimensions. In an orthographic projection, objects that are far way do not get smaller, unlike a perspective projection. The arguments of the function just need to be specified according to the window proportions, in this case, we are using a 640 x 480 window, which adheres to the 4:3 aspect ratio. We can also roughly interpret this as a window resize, where the boundaries are the ones sent to the ortho function. Any vertex that is not within these boundaries, is not rendered.
         glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(-100, 0, 0)); // Applying a transformation to an identity matrix
-        glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(200, 200, 0)); // Applying a transformation to an identity matrix
-        glm::mat4 mvp = projection * view * model; // MVP matrix
 
         Shader shader("../resources/shaders/basic.shader");
         shader.bind();
         shader.setUniform4f("u_Color", 0.8f, 0.3f, 0.8f, 1.0f);
-        shader.setUniformMat4f("u_MVP", mvp);
 
         Texture texture("../resources/textures/ChernoLogo.png");
         texture.bind(); // Binding texture to slot 0
@@ -108,6 +109,17 @@ int main(void)
 
         Renderer renderer;
 
+        ImGui::CreateContext();
+        ImGuiIO& io = ImGui::GetIO(); (void)io;
+        io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
+        io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
+        // Setup Platform / Renderer backends
+        ImGui_ImplGlfw_InitForOpenGL(window, true); // Second param install_callback = true will install GLFW callbacks and chain to existing ones.
+        ImGui_ImplOpenGL3_Init();
+        ImGui::StyleColorsDark();
+
+        glm::vec3 translation(200, 200, 0);
+
         float r = 0.0f; // Used to update the 'R' in 'RGB'
         float increment = 0.05f;
 
@@ -118,8 +130,18 @@ int main(void)
             /* Render here */
             renderer.clear();
 
+            // Start the Dear ImGui frame
+            ImGui_ImplOpenGL3_NewFrame();
+            ImGui_ImplGlfw_NewFrame();
+            ImGui::NewFrame();
+            ImGui::ShowDemoWindow(); // Show demo window! :)
+
+            glm::mat4 model = glm::translate(glm::mat4(1.0f), translation); // Applying a transformation to an identity matrix
+            glm::mat4 mvp = projection * view * model; // MVP matrix
+
             shader.bind();
             shader.setUniform4f("u_Color", r, 0.3f, 0.8f, 1.0f);
+            shader.setUniformMat4f("u_MVP", mvp);
 
             renderer.draw(va, ib, shader);
 
@@ -131,6 +153,17 @@ int main(void)
 
             r += increment;
 
+            // GUI Window
+            {
+                ImGui::SliderFloat3("Translation", &translation.x, 0.0f, 960.0f);
+                ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / io.Framerate, io.Framerate);
+                // ImGui::End();
+            }
+
+            // Rendering
+            ImGui::Render();
+            ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
             /* Swap front and back buffers */
             CallGL(glfwSwapBuffers(window));
 
@@ -141,6 +174,9 @@ int main(void)
 
     }
 
+    ImGui_ImplOpenGL3_Shutdown();
+    ImGui_ImplGlfw_Shutdown();
+    ImGui::DestroyContext();
     glfwTerminate();
     return 0;
     

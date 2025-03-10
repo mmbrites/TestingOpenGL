@@ -175,6 +175,19 @@ glad/fast:
 .PHONY : glad/fast
 
 #=============================================================================
+# Target rules for targets named imgui
+
+# Build rule for target.
+imgui: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 imgui
+.PHONY : imgui
+
+# fast build rule for target.
+imgui/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/build
+.PHONY : imgui/fast
+
+#=============================================================================
 # Target rules for targets named application
 
 # Build rule for target.
@@ -249,6 +262,174 @@ glad/src/gl.s: glad/src/gl.c.s
 glad/src/gl.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/glad/src/gl.c.s
 .PHONY : glad/src/gl.c.s
+
+resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.o: resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.cpp.o
+.PHONY : resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.o
+
+# target to build an object file
+resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.cpp.o
+.PHONY : resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.cpp.o
+
+resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.i: resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.cpp.i
+.PHONY : resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.i
+
+# target to preprocess a source file
+resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.cpp.i
+.PHONY : resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.cpp.i
+
+resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.s: resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.cpp.s
+.PHONY : resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.s
+
+# target to generate assembly for a file
+resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.cpp.s
+.PHONY : resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.cpp.s
+
+resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.o: resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.cpp.o
+.PHONY : resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.o
+
+# target to build an object file
+resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.cpp.o
+.PHONY : resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.cpp.o
+
+resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.i: resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.cpp.i
+.PHONY : resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.i
+
+# target to preprocess a source file
+resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.cpp.i
+.PHONY : resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.cpp.i
+
+resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.s: resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.cpp.s
+.PHONY : resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.s
+
+# target to generate assembly for a file
+resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.cpp.s
+.PHONY : resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.cpp.s
+
+resources/libraries/imgui-1.91.8/imgui.o: resources/libraries/imgui-1.91.8/imgui.cpp.o
+.PHONY : resources/libraries/imgui-1.91.8/imgui.o
+
+# target to build an object file
+resources/libraries/imgui-1.91.8/imgui.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/imgui.cpp.o
+.PHONY : resources/libraries/imgui-1.91.8/imgui.cpp.o
+
+resources/libraries/imgui-1.91.8/imgui.i: resources/libraries/imgui-1.91.8/imgui.cpp.i
+.PHONY : resources/libraries/imgui-1.91.8/imgui.i
+
+# target to preprocess a source file
+resources/libraries/imgui-1.91.8/imgui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/imgui.cpp.i
+.PHONY : resources/libraries/imgui-1.91.8/imgui.cpp.i
+
+resources/libraries/imgui-1.91.8/imgui.s: resources/libraries/imgui-1.91.8/imgui.cpp.s
+.PHONY : resources/libraries/imgui-1.91.8/imgui.s
+
+# target to generate assembly for a file
+resources/libraries/imgui-1.91.8/imgui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/imgui.cpp.s
+.PHONY : resources/libraries/imgui-1.91.8/imgui.cpp.s
+
+resources/libraries/imgui-1.91.8/imgui_demo.o: resources/libraries/imgui-1.91.8/imgui_demo.cpp.o
+.PHONY : resources/libraries/imgui-1.91.8/imgui_demo.o
+
+# target to build an object file
+resources/libraries/imgui-1.91.8/imgui_demo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/imgui_demo.cpp.o
+.PHONY : resources/libraries/imgui-1.91.8/imgui_demo.cpp.o
+
+resources/libraries/imgui-1.91.8/imgui_demo.i: resources/libraries/imgui-1.91.8/imgui_demo.cpp.i
+.PHONY : resources/libraries/imgui-1.91.8/imgui_demo.i
+
+# target to preprocess a source file
+resources/libraries/imgui-1.91.8/imgui_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/imgui_demo.cpp.i
+.PHONY : resources/libraries/imgui-1.91.8/imgui_demo.cpp.i
+
+resources/libraries/imgui-1.91.8/imgui_demo.s: resources/libraries/imgui-1.91.8/imgui_demo.cpp.s
+.PHONY : resources/libraries/imgui-1.91.8/imgui_demo.s
+
+# target to generate assembly for a file
+resources/libraries/imgui-1.91.8/imgui_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/imgui_demo.cpp.s
+.PHONY : resources/libraries/imgui-1.91.8/imgui_demo.cpp.s
+
+resources/libraries/imgui-1.91.8/imgui_draw.o: resources/libraries/imgui-1.91.8/imgui_draw.cpp.o
+.PHONY : resources/libraries/imgui-1.91.8/imgui_draw.o
+
+# target to build an object file
+resources/libraries/imgui-1.91.8/imgui_draw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/imgui_draw.cpp.o
+.PHONY : resources/libraries/imgui-1.91.8/imgui_draw.cpp.o
+
+resources/libraries/imgui-1.91.8/imgui_draw.i: resources/libraries/imgui-1.91.8/imgui_draw.cpp.i
+.PHONY : resources/libraries/imgui-1.91.8/imgui_draw.i
+
+# target to preprocess a source file
+resources/libraries/imgui-1.91.8/imgui_draw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/imgui_draw.cpp.i
+.PHONY : resources/libraries/imgui-1.91.8/imgui_draw.cpp.i
+
+resources/libraries/imgui-1.91.8/imgui_draw.s: resources/libraries/imgui-1.91.8/imgui_draw.cpp.s
+.PHONY : resources/libraries/imgui-1.91.8/imgui_draw.s
+
+# target to generate assembly for a file
+resources/libraries/imgui-1.91.8/imgui_draw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/imgui_draw.cpp.s
+.PHONY : resources/libraries/imgui-1.91.8/imgui_draw.cpp.s
+
+resources/libraries/imgui-1.91.8/imgui_tables.o: resources/libraries/imgui-1.91.8/imgui_tables.cpp.o
+.PHONY : resources/libraries/imgui-1.91.8/imgui_tables.o
+
+# target to build an object file
+resources/libraries/imgui-1.91.8/imgui_tables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/imgui_tables.cpp.o
+.PHONY : resources/libraries/imgui-1.91.8/imgui_tables.cpp.o
+
+resources/libraries/imgui-1.91.8/imgui_tables.i: resources/libraries/imgui-1.91.8/imgui_tables.cpp.i
+.PHONY : resources/libraries/imgui-1.91.8/imgui_tables.i
+
+# target to preprocess a source file
+resources/libraries/imgui-1.91.8/imgui_tables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/imgui_tables.cpp.i
+.PHONY : resources/libraries/imgui-1.91.8/imgui_tables.cpp.i
+
+resources/libraries/imgui-1.91.8/imgui_tables.s: resources/libraries/imgui-1.91.8/imgui_tables.cpp.s
+.PHONY : resources/libraries/imgui-1.91.8/imgui_tables.s
+
+# target to generate assembly for a file
+resources/libraries/imgui-1.91.8/imgui_tables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/imgui_tables.cpp.s
+.PHONY : resources/libraries/imgui-1.91.8/imgui_tables.cpp.s
+
+resources/libraries/imgui-1.91.8/imgui_widgets.o: resources/libraries/imgui-1.91.8/imgui_widgets.cpp.o
+.PHONY : resources/libraries/imgui-1.91.8/imgui_widgets.o
+
+# target to build an object file
+resources/libraries/imgui-1.91.8/imgui_widgets.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/imgui_widgets.cpp.o
+.PHONY : resources/libraries/imgui-1.91.8/imgui_widgets.cpp.o
+
+resources/libraries/imgui-1.91.8/imgui_widgets.i: resources/libraries/imgui-1.91.8/imgui_widgets.cpp.i
+.PHONY : resources/libraries/imgui-1.91.8/imgui_widgets.i
+
+# target to preprocess a source file
+resources/libraries/imgui-1.91.8/imgui_widgets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/imgui_widgets.cpp.i
+.PHONY : resources/libraries/imgui-1.91.8/imgui_widgets.cpp.i
+
+resources/libraries/imgui-1.91.8/imgui_widgets.s: resources/libraries/imgui-1.91.8/imgui_widgets.cpp.s
+.PHONY : resources/libraries/imgui-1.91.8/imgui_widgets.s
+
+# target to generate assembly for a file
+resources/libraries/imgui-1.91.8/imgui_widgets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/resources/libraries/imgui-1.91.8/imgui_widgets.cpp.s
+.PHONY : resources/libraries/imgui-1.91.8/imgui_widgets.cpp.s
 
 src/Application.o: src/Application.cpp.o
 .PHONY : src/Application.o
@@ -483,9 +664,31 @@ help:
 	@echo "... application"
 	@echo "... glad"
 	@echo "... glfw"
+	@echo "... imgui"
 	@echo "... glad/src/gl.o"
 	@echo "... glad/src/gl.i"
 	@echo "... glad/src/gl.s"
+	@echo "... resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.o"
+	@echo "... resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.i"
+	@echo "... resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.s"
+	@echo "... resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.o"
+	@echo "... resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.i"
+	@echo "... resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.s"
+	@echo "... resources/libraries/imgui-1.91.8/imgui.o"
+	@echo "... resources/libraries/imgui-1.91.8/imgui.i"
+	@echo "... resources/libraries/imgui-1.91.8/imgui.s"
+	@echo "... resources/libraries/imgui-1.91.8/imgui_demo.o"
+	@echo "... resources/libraries/imgui-1.91.8/imgui_demo.i"
+	@echo "... resources/libraries/imgui-1.91.8/imgui_demo.s"
+	@echo "... resources/libraries/imgui-1.91.8/imgui_draw.o"
+	@echo "... resources/libraries/imgui-1.91.8/imgui_draw.i"
+	@echo "... resources/libraries/imgui-1.91.8/imgui_draw.s"
+	@echo "... resources/libraries/imgui-1.91.8/imgui_tables.o"
+	@echo "... resources/libraries/imgui-1.91.8/imgui_tables.i"
+	@echo "... resources/libraries/imgui-1.91.8/imgui_tables.s"
+	@echo "... resources/libraries/imgui-1.91.8/imgui_widgets.o"
+	@echo "... resources/libraries/imgui-1.91.8/imgui_widgets.i"
+	@echo "... resources/libraries/imgui-1.91.8/imgui_widgets.s"
 	@echo "... src/Application.o"
 	@echo "... src/Application.i"
 	@echo "... src/Application.s"

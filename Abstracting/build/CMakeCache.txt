@@ -738,6 +738,9 @@ X11_xkbfile_LIB:FILEPATH=X11_xkbfile_LIB-NOTFOUND
 //The directory containing a CMake configuration file for glm.
 glm_DIR:PATH=/usr/local/share/glm
 
+//Dependencies for the target
+imgui_LIB_DEPENDS:STATIC=general;glfw;general;glad;
+
 //Path to a library.
 pkgcfg_lib_Wayland_wayland-client:FILEPATH=/usr/lib64/libwayland-client.so
 
@@ -775,7 +778,7 @@ CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
 CMAKE_CACHE_MINOR_VERSION:INTERNAL=30
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=7
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=8
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.

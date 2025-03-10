@@ -223,8 +223,11 @@ application: CMakeFiles/application.dir/build.make
 application: glfw/src/libglfw3.a
 application: libglad.a
 application: /usr/local/lib64/libglm.a
+application: libimgui.a
+application: glfw/src/libglfw3.a
 application: /usr/lib64/librt.a
 application: /usr/lib64/libm.so
+application: libglad.a
 application: CMakeFiles/application.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable application"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/application.dir/link.txt --verbose=$(VERBOSE)

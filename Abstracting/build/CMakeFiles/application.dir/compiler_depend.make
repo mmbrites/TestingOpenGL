@@ -5,6 +5,10 @@ CMakeFiles/application.dir/src/Application.cpp.o: /home/chiono/Documents/Program
   /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/glad/include/KHR/khrplatform.h \
   /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/glad/include/glad/gl.h \
   /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/glfw/include/GLFW/glfw3.h \
+  /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.h \
+  /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.h \
+  /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/resources/libraries/imgui-1.91.8/imconfig.h \
+  /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/resources/libraries/imgui-1.91.8/imgui.h \
   /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/IndexBuffer.h \
   /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/Renderer.h \
   /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/Shader.h \
@@ -278,6 +282,8 @@ CMakeFiles/application.dir/src/Application.cpp.o: /home/chiono/Documents/Program
   /usr/include/stdint.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
   /usr/include/sys/cdefs.h \
   /usr/include/sys/select.h \
   /usr/include/sys/single_threaded.h \
@@ -3426,8 +3432,6 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 
 /usr/local/include/glm/detail/compute_common.hpp:
 
-/usr/lib/gcc/x86_64-redhat-linux/14/include/stddef.h:
-
 /usr/lib/gcc/x86_64-redhat-linux/14/include/limits.h:
 
 /usr/lib/gcc/x86_64-redhat-linux/14/include/float.h:
@@ -3484,15 +3488,9 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 
 /usr/include/ctype.h:
 
-/usr/local/include/glm/ext/vector_bool3.hpp:
+/usr/include/c++/14/x86_64-redhat-linux/bits/os_defines.h:
 
-/usr/local/include/glm/ext/matrix_float3x4_precision.hpp:
-
-/usr/include/c++/14/clocale:
-
-/usr/include/c++/14/ostream:
-
-/usr/include/bits/pthreadtypes.h:
+/usr/include/c++/14/x86_64-redhat-linux/bits/gthr.h:
 
 /usr/include/c++/14/bit:
 
@@ -3502,19 +3500,15 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 
 /usr/include/bits/time64.h:
 
-/usr/include/string.h:
-
 /usr/local/include/glm/geometric.hpp:
+
+/usr/include/string.h:
 
 /usr/include/c++/14/bits/allocator.h:
 
 /usr/include/stdio.h:
 
 /usr/include/bits/wordsize.h:
-
-/usr/lib/gcc/x86_64-redhat-linux/14/include/xmmintrin.h:
-
-/usr/include/bits/timesize.h:
 
 /usr/include/bits/unistd_ext.h:
 
@@ -3594,8 +3588,6 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 
 /usr/include/bits/thread-shared-types.h:
 
-/usr/include/bits/struct_mutex.h:
-
 /usr/local/include/glm/detail/func_integer.inl:
 
 /usr/include/bits/types/struct_timeval.h:
@@ -3610,17 +3602,23 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 
 /usr/include/bits/types/error_t.h:
 
-/usr/include/c++/14/iosfwd:
+/usr/local/include/glm/detail/type_mat2x4.inl:
 
-/usr/include/bits/wctype-wchar.h:
+/usr/include/bits/types/struct_sigstack.h:
 
-/usr/include/bits/types/struct_FILE.h:
+/usr/include/bits/types/stack_t.h:
 
-/usr/include/bits/environments.h:
+/usr/local/include/glm/integer.hpp:
 
-/usr/local/include/glm/detail/type_vec1.inl:
+/usr/include/bits/sigevent-consts.h:
 
-/usr/include/c++/14/bits/uses_allocator.h:
+/usr/include/bits/types/mbstate_t.h:
+
+/usr/include/bits/signal_ext.h:
+
+/usr/include/c++/14/bits/move.h:
+
+/usr/include/c++/14/tr1/ell_integral.tcc:
 
 /usr/include/bits/types/sigval_t.h:
 
@@ -3638,10 +3636,6 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 
 /usr/include/c++/14/cstddef:
 
-/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/VertexBuffer.h:
-
-/usr/include/c++/14/bits/exception_ptr.h:
-
 /usr/local/include/glm/common.hpp:
 
 /usr/include/bits/stdint-intn.h:
@@ -3658,6 +3652,14 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 
 /usr/include/bits/locale.h:
 
+/usr/include/bits/sigthread.h:
+
+/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/VertexBuffer.cpp:
+
+/usr/local/include/glm/ext/matrix_double3x3_precision.hpp:
+
+/usr/include/alloca.h:
+
 /usr/include/bits/types/struct_tm.h:
 
 /usr/local/include/glm/ext/matrix_double4x2_precision.hpp:
@@ -3668,14 +3670,6 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 
 /usr/include/c++/14/streambuf:
 
-/usr/local/include/glm/detail/qualifier.hpp:
-
-/usr/include/gnu/stubs-64.h:
-
-/usr/include/c++/14/tr1/riemann_zeta.tcc:
-
-/usr/include/bits/types/__sigval_t.h:
-
 /usr/include/bits/byteswap.h:
 
 /usr/include/time.h:
@@ -3683,6 +3677,30 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/glad/include/glad/gl.h:
 
 /usr/include/c++/14/bits/locale_facets.tcc:
+
+/usr/lib/gcc/x86_64-redhat-linux/14/include/xmmintrin.h:
+
+/usr/include/bits/timesize.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/bits/signum-arch.h:
+
+/usr/include/c++/14/cstdlib:
+
+/usr/include/c++/14/system_error:
+
+/usr/include/c++/14/iosfwd:
+
+/usr/include/bits/types/struct_FILE.h:
+
+/usr/include/bits/environments.h:
+
+/usr/local/include/glm/detail/type_vec1.inl:
+
+/usr/include/c++/14/bits/uses_allocator.h:
+
+/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/resources/libraries/imgui-1.91.8/backends/imgui_impl_glfw.h:
 
 /usr/include/asm-generic/errno.h:
 
@@ -3700,10 +3718,6 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 
 /usr/include/c++/14/bits/memoryfwd.h:
 
-/usr/include/c++/14/bits/char_traits.h:
-
-/usr/include/c++/14/bits/hash_bytes.h:
-
 /usr/lib/gcc/x86_64-redhat-linux/14/include/stdarg.h:
 
 /usr/include/asm-generic/errno-base.h:
@@ -3712,27 +3726,25 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 
 /usr/include/c++/14/bits/stl_iterator.h:
 
-/usr/include/bits/endian.h:
+/usr/include/c++/14/bits/hashtable.h:
 
-/usr/include/bits/signum-arch.h:
+/usr/include/bits/struct_mutex.h:
 
-/usr/include/c++/14/cstdlib:
+/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/resources/libraries/imgui-1.91.8/imgui.h:
 
-/usr/include/c++/14/system_error:
+/usr/lib/gcc/x86_64-redhat-linux/14/include/stddef.h:
 
-/usr/include/bits/sigthread.h:
+/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/resources/libraries/imgui-1.91.8/backends/imgui_impl_opengl3.h:
 
-/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/VertexBuffer.cpp:
+/usr/include/c++/14/x86_64-redhat-linux/bits/c++allocator.h:
 
-/usr/local/include/glm/ext/matrix_double3x3_precision.hpp:
+/usr/include/bits/setjmp.h:
 
-/usr/include/alloca.h:
+/usr/include/bits/wctype-wchar.h:
 
-/usr/include/bits/long-double.h:
+/usr/include/c++/14/bits/exception_ptr.h:
 
-/usr/local/include/glm/ext/matrix_transform.hpp:
-
-/usr/include/c++/14/bits/sstream.tcc:
+/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/VertexBuffer.h:
 
 /usr/include/c++/14/bits/streambuf_iterator.h:
 
@@ -3758,10 +3770,6 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 
 /usr/include/bits/types.h:
 
-/usr/include/bits/floatn.h:
-
-/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/IndexBuffer.h:
-
 /usr/include/bits/getopt_core.h:
 
 /usr/local/include/glm/ext/matrix_double4x4_precision.hpp:
@@ -3780,15 +3788,29 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 
 /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/VertexBufferLayout.h:
 
+/usr/include/bits/pthreadtypes.h:
+
+/usr/local/include/glm/detail/qualifier.hpp:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/include/bits/types/__sigval_t.h:
+
+/usr/include/c++/14/tr1/riemann_zeta.tcc:
+
 /usr/include/bits/types/struct_timespec.h:
 
 /usr/include/c++/14/concepts:
 
-/usr/local/include/glm/integer.hpp:
+/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/IndexBuffer.h:
 
-/usr/include/bits/sigevent-consts.h:
+/usr/include/bits/floatn.h:
 
-/usr/include/bits/types/stack_t.h:
+/usr/include/bits/long-double.h:
+
+/usr/local/include/glm/ext/matrix_transform.hpp:
+
+/usr/include/c++/14/bits/sstream.tcc:
 
 /usr/local/include/glm/ext/vector_bool4.hpp:
 
@@ -3815,14 +3837,6 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/Application.cpp:
 
 /usr/include/c++/14/ext/string_conversions.h:
-
-/usr/include/bits/types/mbstate_t.h:
-
-/usr/include/bits/signal_ext.h:
-
-/usr/include/c++/14/bits/move.h:
-
-/usr/include/c++/14/tr1/ell_integral.tcc:
 
 /usr/include/bits/math-vector.h:
 
@@ -3860,6 +3874,20 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 
 /usr/include/c++/14/x86_64-redhat-linux/bits/atomic_word.h:
 
+/usr/include/bits/select.h:
+
+/usr/local/include/glm/ext/vector_bool3.hpp:
+
+/usr/local/include/glm/ext/matrix_float3x4_precision.hpp:
+
+/usr/include/c++/14/clocale:
+
+/usr/include/c++/14/ostream:
+
+/usr/include/c++/14/bits/char_traits.h:
+
+/usr/include/c++/14/bits/hash_bytes.h:
+
 /usr/local/include/glm/ext/matrix_double4x2.hpp:
 
 /usr/include/c++/14/bits/basic_ios.tcc:
@@ -3873,14 +3901,6 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 /usr/include/bits/fp-logb.h:
 
 /usr/include/c++/14/stdexcept:
-
-/usr/include/bits/select.h:
-
-/usr/include/bits/setjmp.h:
-
-/usr/local/include/glm/detail/type_mat2x4.inl:
-
-/usr/include/bits/types/struct_sigstack.h:
 
 /usr/local/include/glm/gtc/constants.hpp:
 
@@ -3921,8 +3941,6 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 /usr/include/c++/14/bits/fstream.tcc:
 
 /usr/include/c++/14/bits/functexcept.h:
-
-/usr/include/c++/14/bits/hashtable.h:
 
 /usr/include/c++/14/bits/hashtable_policy.h:
 
@@ -3976,15 +3994,17 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 
 /usr/local/include/glm/ext/matrix_double3x4.hpp:
 
-/usr/include/bits/waitstatus.h:
-
 /usr/include/bits/wchar.h:
+
+/usr/include/bits/waitstatus.h:
 
 /usr/include/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/c++/14/tr1/beta_function.tcc:
 
 /usr/include/bits/stdio_lim.h:
+
+/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/resources/libraries/imgui-1.91.8/imconfig.h:
 
 /usr/include/c++/14/bits/refwrap.h:
 
@@ -4024,9 +4044,9 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 
 /usr/lib/gcc/x86_64-redhat-linux/14/include/emmintrin.h:
 
-/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/Shader.h:
-
 /usr/include/bits/posix2_lim.h:
+
+/home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/src/Shader.h:
 
 /usr/include/c++/14/bits/uses_allocator_args.h:
 
@@ -4090,6 +4110,12 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 
 /usr/include/c++/14/fstream:
 
+/usr/include/c++/14/x86_64-redhat-linux/bits/error_constants.h:
+
+/usr/include/c++/14/bits/postypes.h:
+
+/usr/include/c++/14/initializer_list:
+
 /usr/lib/gcc/x86_64-redhat-linux/14/include/mmintrin.h:
 
 /usr/local/include/glm/gtc/matrix_transform.hpp:
@@ -4134,8 +4160,6 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 
 /usr/include/c++/14/vector:
 
-/usr/include/c++/14/x86_64-redhat-linux/bits/c++allocator.h:
-
 /usr/local/include/glm/detail/_fixes.hpp:
 
 /home/chiono/Documents/Programming/Projects/TestingOpenGL/Abstracting/glfw/include/GLFW/glfw3.h:
@@ -4149,13 +4173,3 @@ CMakeFiles/application.dir/src/vendor/stb_image/stb_image.cpp.o: /home/chiono/Do
 /usr/include/c++/14/ext/numeric_traits.h:
 
 /usr/include/c++/14/x86_64-redhat-linux/bits/cpu_defines.h:
-
-/usr/include/c++/14/bits/postypes.h:
-
-/usr/include/c++/14/initializer_list:
-
-/usr/include/c++/14/x86_64-redhat-linux/bits/error_constants.h:
-
-/usr/include/c++/14/x86_64-redhat-linux/bits/gthr.h:
-
-/usr/include/c++/14/x86_64-redhat-linux/bits/os_defines.h:
